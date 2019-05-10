@@ -197,3 +197,167 @@
 186 7902	FORD	ANALYST	    81/12/03 
 187 7934	MILLER	CLERK	    82/01/23 
 188 */ 
+-- ORDER BY : 정렬
+--9) emp 테이블 comm 을 가장 많이 받는 순서대로
+-- empno,ename,job,hiredate,comm 컬럼을 조회하시오.
+SELECT empno
+      ,ename
+      ,job
+      ,hiredate
+      ,comm
+FROM emp
+ORDER BY comm DESC
+174 EMPNO,  ENAME,  JOB,        HIREDATE 
+175 ------------------------------------ 
+176 7369	SMITH	CLERK	    80/12/17 
+177 7499	ALLEN	SALESMAN	81/02/20 
+178 7521	WARD	SALESMAN	81/02/22 
+179 7566	JONES	MANAGER	    81/04/02 
+180 7654	MARTIN	SALESMAN	81/09/28 
+181 7698	BLAKE	MANAGER	    81/05/01 
+182 7782	CLARK	MANAGER	    81/06/09 
+183 7839	KING	PRESIDENT	81/11/17 
+184 7844	TURNER	SALESMAN	81/09/08 
+185 7900	JAMES	CLERK	    81/12/03 
+186 7902	FORD	ANALYST	    81/12/03 
+187 7934	MILLER	CLERK	    82/01/23 
+*/
+-- 10) emp 테이블에서
+--     comm 은 적은 순서대로, job 은 오름차순(영문), ename 오름차순(영문)
+--     정렬하여
+--     empno, ename, job, hiredate, comm 을 조회하시오.
+SELECT empno
+      ,ename
+     ,job
+     ,hiredate
+     ,comm
+FROM emp
+ORDER BY comm, job ASC, ename
+;
+--emp 테이블에서
+--comm 이 적은 순서대로, job 오름차순, ename 내림차순 으로 정렬하여
+--empno,ename,job,hiredate,comm 을 조회하시오.
+SELECT empno
+      ,ename
+      ,job
+      ,hiredate
+      ,comm
+FROM emp
+ORDER BY comm, job, ename DESC
+;
+/*
+EMPNO  ENAME    JOB         HIREDATE   COMM
+7844	TURNER	SALESMAN	81/09/08	0
+7499	ALLEN	SALESMAN	81/02/20	300
+7521	WARD	SALESMAN	81/02/22	500
+7654	MARTIN	SALESMAN	81/09/28	1400
+7902	FORD	ANALYST	    81/12/03	
+7900	JAMES	CLERK	    81/12/03	
+7934	MILLER	CLERK	    82/01/23	
+7369	SMITH	CLERK	    80/12/17	
+7698	BLAKE	MANAGER	    81/05/01	
+7782	CLARK	MANAGER	    81/06/09	
+7566	JONES	MANAGER	    81/04/02	
+7839	KING	PRESIDENT	81/11/17	
+
+--Alias: 별칭
+--11) emp 테이블에서
+--    empno => Employee No.
+--    ename => Employee Name
+--    job   => Job Name
+--    세 컬럼의 이름을 별칭으로 바꾸어서 조회
+SELECT empno AS "Employee No."
+      ,ename "Employee 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    --12) 한글 별칭을 사용
+    --    emp 테이블에서 각 컬럼에 한글 별칭을 사용
+    --    empno => 사번
+    --    ename => 이 름 (한글 별칭 사이에 공백 주의)
+    --    job   => 직무
+    SELECT empno 사번
+          ,ename "이 름"
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     --13) 테이블에서 별칭 설정
+     --    emp 테이블에서 empno, enme 을 조회하시오
+     -- 1. 별칭 없이 구문 작성
+     SELECT empno
+           ,ename
+     FROM   emp
+;
+--2. SELECT절에 컬럼 나열할 때, 앞에 테이블 이름을 붙일 수 있음.
+--   테이블 이름을 붙여서 컬럼을 조회
+SELECT emp.empno
+      ,emp.ename
+FROM emp
+;
+
+--3. FROM 절의 emp 테이블에 e 라는 별칭을 주고
+--   SELECT 절의 컬럼앞에 테이블 별칭 e를 붙여서 조회
+SELECT e.empno -- 테이블 별칭이 사용되는 위치: 컬럼 이름 앞
+      ,e name
+FROM emp e -- 테이블 별칭 사용 위치 
+;
+
+
+-- 14) 영문 별칭을 사용할때, 쌍따옴표를 사용하지 않으면
+-- => 결과 출력시 별칭이 모두 대문자화 되어 조회됨
+--  emp=> 테이블에서
+--  empno=> EmployeeNo
+--  ename=> "Employee Name"
+--  job  => " Job Name"
+SELECT e.empno AS EmployeeNo
+      ,e.ename "Employee Name"
+      ,e.job "Job Name"
+From emp e
+;
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+
+
+
+
